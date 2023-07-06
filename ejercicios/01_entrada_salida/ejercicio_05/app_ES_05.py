@@ -44,15 +44,17 @@ class App(customtkinter.CTk):
         #self.txt_nombre
         #self.txt_edad
         #tomo el nombre del usuario
-        nombre= self.txt_nombre.get()
+        nombre = self.txt_nombre.get()
         #tomo la edad del usuario
-        edad= self.txt_edad.get()
+        edad = self.txt_edad.get()
         #programo el alert
-        saludo= "Hola " + nombre +","+ " tienes " + edad + " años de edad."
-        alert (title= "Bienvenid@", message=saludo)   
+        saludo = "Usted se llama " + nombre + " y su edad es de " + edad + " años."
+        alert(title = "Bienvenid@", message = saludo)   
 
         #existe otra forma 
-        # (52) message= "Hola " + nombre +","+ " tienes " + edad + " años de edad." 
+        # poner el message directamente sin variable saludo
+        # alert (piripipi, message= "Usted se llama " + nombre + "y su edad es " + edad +"años")
+
         # Tambien se puede aplicar dentro de message cualquiera de las dos de abajo:
         # usando f (51) saludo= f"Hola {nombre}, tienes {edad} años de edad "
         # usando format (51) saludo= "Hola {0}, tienes {1} años de edad" .format(nombre,edad)    

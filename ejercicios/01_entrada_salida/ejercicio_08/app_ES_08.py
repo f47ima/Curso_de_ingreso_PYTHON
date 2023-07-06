@@ -41,11 +41,21 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        a=self.txt_operador_a.get()
-        b=self.txt_operador_b.get()        
-        resultado_modulo= int(a) % int(b)
-        mensaje_resultado= "El resto de dividir "+ a +" por "+ b + " es: " + str(resultado_modulo)
-        alert(title="Modulo/Resto",message=mensaje_resultado)
+        #tomo datos de la caja
+        operador_a = self.txt_operador_a.get()
+        operador_b = self.txt_operador_b.get() 
+        #paso a enteros
+        operador_a_int = int (operador_a)
+        operador_b_int = int (operador_b)
+
+        resultado_modulo = operador_a_int % operador_b_int
+        #paso a str para la variable mensaje_resultado
+        resultado_modulo_str = str (resultado_modulo)
+
+        #creo la variable del message
+        mensaje_resultado_modulo= "El resto de dividir "+ operador_a +" por "+ operador_b + " es: " + resultado_modulo_str
+
+        alert (title="Modulo/Resto",message=mensaje_resultado_modulo)
         pass
         
     # tambien lo resolvi asi:

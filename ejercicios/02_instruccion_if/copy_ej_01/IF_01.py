@@ -5,15 +5,14 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:fatima
-apellido:gonzalez
+nombre: fatima
+apellido: gonzalez 
 ---
-Ejercicio: instrucion_if_03
+Ejercicio: instrucion_if_01
 ---
 Enunciado:
-Al presionar el botón  'Calcular', se deberá obtener contenido en la caja de texto txtEdad, transformarlo en número 
-y calcular si es o no mayor de edad, si es mayor de 18 se mostrará el mensaje “MAYOR” caso contrario “MENOR” en 
-ambos casos utilizando el Dialog Alert.
+Al presionar el botón  'Mostrar', se deberá obtener contenido en la caja de texto txt_edad,
+transformarlo en número, si coincide con el valor 18, mostrar el mensaje “Usted tiene 18 años” utilizando el Dialog Alert.
 '''
 
 class App(customtkinter.CTk):
@@ -35,20 +34,29 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        edad = self.txt_edad.get()
-        edadINT = int(edad)
+        # 2 valores posibles: True/False
+        nombre= prompt("Nombre","Ingrese un nombre")
+        #numero= int(numero)
 
-        if edadINT >= 18:
-           mensaje = "MAYOR"
-
+        if nombre=="waldo":
+            mensaje= "Lo encontraste"
         else:
-           mensaje = "menor"
+            mensaje= "Segui intentando"
 
-        alert (title= "Ej03", message = mensaje)
-        
+        alert ("resultado",mensaje)
+
+
+        pass
 
         
+        #if tiene dos valores posibles
+        #true o false 
+        #if True:
+             #print ("Hola")
+        #print("fin")
         
+             
+
     
 if __name__ == "__main__":
     app = App()

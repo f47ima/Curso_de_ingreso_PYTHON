@@ -40,10 +40,15 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        importeFLO= int(self.txt_importe.get())
-        descuentoFLO= int(self.txt_descuento.get())
-        resultado= importeFLO- (importeFLO * descuentoFLO/100)
-        alert (title="TOTAL", message= resultado)
+        importe = (self.txt_importe.get())
+        descuento = (self.txt_descuento.get())
+
+        importe_float = float (importe)
+        descuento_float = float(descuento)
+
+        resultado = importe_float - (importe_float * descuento_float / 100)
+
+        alert (title="Actualziación", message = resultado)
         pass
 
     #preguntar que onda con ese promt fantasmin que habia.

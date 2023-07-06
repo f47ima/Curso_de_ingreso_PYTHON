@@ -30,7 +30,7 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         #Esto no anda, funciona
-        alert (title= "Ej 01",message="Esto no anda, funciona")
+        alert (title = "Ej 01", message = "Esto no anda, funciona")
         pass
 
 

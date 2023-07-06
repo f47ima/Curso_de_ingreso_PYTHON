@@ -11,8 +11,10 @@ apellido:
 Ejercicio: instrucion_if_05
 ---
 Enunciado:
-Al presionar el botón  'Calcular', se deberá obtener contenido en la caja de texto txtEdad, 
-transformarlo en número e informar si la persona "NO ES ADOLESCENTE" utilizando el Dialog Alert.
+Al presionar el botón  'Calcular', se deberá obtener contenido 
+en la caja de texto txtEdad, 
+transformarlo en número e informar si la persona 
+"NO ES ADOLESCENTE" utilizando el Dialog Alert.
 '''
 
 class App(customtkinter.CTk):

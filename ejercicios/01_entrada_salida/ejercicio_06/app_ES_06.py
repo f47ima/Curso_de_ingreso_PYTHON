@@ -41,20 +41,31 @@ class App(customtkinter.CTk):
 
 
     def btn_sumar_on_click(self):
-        #self.txt_operador_a 
-        #self.txt_operador_b
         #obtengo datos de op a y op b y creo una variable para identificarlos 
-        a=self.txt_operador_a.get()
-        b=self.txt_operador_b.get()
-        #creo una variable para la suma que busco, lo convierto en entero para despues pasarlo a un 
-        # str para que se pueda unir al texto de "el resultado..."
-        resultado= "El resultado de la suma es: " + str(int(a) + int(b))
-        #creo el dialog alert
-        alert(title="Resultado" ,message= resultado)
+        operador_a = self.txt_operador_a.get()
+        operador_b = self.txt_operador_b.get()
+
+        #creo una variable para pasarlo a entero 
+        operador_a_int = int(operador_a)
+        operador_b_int = int(operador_b)
+        
+        resultado_int = operador_a_int + operador_b_int
+        #paso el resultado a str para que se concatene con el mensaje del alert 
+        resultado_str = str(resultado_int)
+
+        #creo la variable para poner en message
+        mensaje_resultado = "El resultado de la suma es: " + resultado_str
+
+        
+        alert(title = "Resultado" , message = mensaje_resultado)
+
         
         pass
+
+
+
     # TAmbien me gusto 
-    # 51 resultado= int(a) + int(b)
+    # resultado= int(a) + int(b) pero ahora ya se que no se puede hacer eso 
     #entonces en 
     #53 alert (title="Resultado", message= "El resultado de la suma es: " + str(resultado))
 

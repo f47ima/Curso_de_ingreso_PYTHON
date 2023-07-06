@@ -35,9 +35,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        nombre= self.txt_nombre.get()
-        saludo= "Hola " + nombre
-        alert(title="Bienvenid@", message=saludo)
+        nombre = self.txt_nombre.get()
+        saludo = "Hola, " + nombre
+        alert(title = "Bienvenid@", message = saludo)
         pass
                 
     

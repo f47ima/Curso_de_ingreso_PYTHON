@@ -28,8 +28,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        nombre=prompt(title="dame un dato", prompt="Inrese un nombre")
-        alert(title="ej 02", message=nombre)
+        nombre = prompt(title = "dame un dato", prompt = "Inrese un nombre")
+        alert(title = "EJ 02", message = nombre)
         pass
         
         
