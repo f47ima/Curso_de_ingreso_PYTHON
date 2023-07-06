@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: fatima
+apellido: gonzalez
 ---
 Ejercicio: entrada_salida_09
 ---
@@ -40,8 +40,13 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
+        sueldoFLO= float(self.txt_sueldo.get())
+        incrementoFLO= float(self.txt_incremento.get())
+        resultado= (sueldoFLO * incrementoFLO/100)+ sueldoFLO
+        alert(title="Actualización", message=resultado)
         pass
-        
+    #preguntar porque la caja de texto no permite la coma del escritorio como entrada de datos, solo el punto.
+    #En un principio puse int y en el alert me puso un resultado redondo con .0 como si fuera un float, porque?
     
 if __name__ == "__main__":
     app = App()

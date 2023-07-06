@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: fatima
+apellido: gonzalez 
 ---
 Ejercicio: entrada_salida_07
 ---
@@ -50,15 +50,38 @@ class App(customtkinter.CTk):
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_sumar_on_click(self):
+        #self.txt_operador_a 
+        #self.txt_operador_b
+        #obtengo datos de op a y op b y creo una variable para identificarlos 
+        a=self.txt_operador_a.get()
+        b=self.txt_operador_b.get()
+        #convierto los datos de los operadores en enteros con el int y los sumo en una unica variable- resultado
+        resultado_suma= int(a) + int(b)
+        #creo el dialog alert y convierto el resultado en str para que se pueda concatenar en el mensaje 
+        alert(title="Suma" ,message="El resultado de la suma es: "+ str(resultado_suma))
         pass
 
     def btn_restar_on_click(self):
+        #Cada vez que se hace un nuevo boton se debe poner otra vez la variable de los operadores.
+        # No sabemos aun porque, pero monkey see, monkey do.
+        a=self.txt_operador_a.get()
+        b=self.txt_operador_b.get()
+        resultado_resta= int(a) - int(b)
+        alert(title="Resta",message="El resultado de la resta es: "+ str(resultado_resta))
         pass
 
     def btn_multiplicar_on_click(self):
+        a=self.txt_operador_a.get()
+        b=self.txt_operador_b.get()
+        resultado_multiplicacion= int(a) * int(b)
+        alert(title="Multiplicación",message="El resultado de la multiplicación es: "+ str(resultado_multiplicacion))
         pass
 
     def btn_dividir_on_click(self):
+        a=self.txt_operador_a.get()
+        b=self.txt_operador_b.get()
+        resultado_division= int(a) - int(b)
+        alert(title="División",message="El resultado de la división es: "+ str(resultado_division))
         pass
         
 if __name__ == "__main__":

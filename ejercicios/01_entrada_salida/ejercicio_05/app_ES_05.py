@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: fatima 
+apellido: gonzalez 
 ---
 Ejercicio: entrada_salida_05
 ---
@@ -41,6 +41,22 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
+        #self.txt_nombre
+        #self.txt_edad
+        #tomo el nombre del usuario
+        nombre= self.txt_nombre.get()
+        #tomo la edad del usuario
+        edad= self.txt_edad.get()
+        #programo el alert
+        saludo= "Hola " + nombre +","+ " tienes " + edad + " años de edad."
+        alert (title= "Bienvenid@", message=saludo)   
+
+        #existe otra forma 
+        # (52) message= "Hola " + nombre +","+ " tienes " + edad + " años de edad." 
+        # Tambien se puede aplicar dentro de message cualquiera de las dos de abajo:
+        # usando f (51) saludo= f"Hola {nombre}, tienes {edad} años de edad "
+        # usando format (51) saludo= "Hola {0}, tienes {1} años de edad" .format(nombre,edad)    
+                
         pass
 
 

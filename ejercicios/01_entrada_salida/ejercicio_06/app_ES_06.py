@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:fatima
+apellido:gonzalez
 ---
 Ejercicio: entrada_salida_06
 ---
@@ -41,8 +41,24 @@ class App(customtkinter.CTk):
 
 
     def btn_sumar_on_click(self):
+        #self.txt_operador_a 
+        #self.txt_operador_b
+        #obtengo datos de op a y op b y creo una variable para identificarlos 
+        a=self.txt_operador_a.get()
+        b=self.txt_operador_b.get()
+        #creo una variable para la suma que busco, lo convierto en entero para despues pasarlo a un 
+        # str para que se pueda unir al texto de "el resultado..."
+        resultado= "El resultado de la suma es: " + str(int(a) + int(b))
+        #creo el dialog alert
+        alert(title="Resultado" ,message= resultado)
+        
         pass
-     
+    # TAmbien me gusto 
+    # 51 resultado= int(a) + int(b)
+    #entonces en 
+    #53 alert (title="Resultado", message= "El resultado de la suma es: " + str(resultado))
+
+     #alert("utn", f"tu resultado es {suma}")??? Raro, no se, todavia no.
         
 if __name__ == "__main__":
     app = App()
