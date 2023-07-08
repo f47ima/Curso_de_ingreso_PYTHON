@@ -39,14 +39,16 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         #obtuve cont caja edad
-        edad= self.txt_edad.get()
+        edad = self.txt_edad.get()
         #tranforme a int 
-        edadINT= int(edad)
+        edad_int = int(edad)
 
-        if edadINT >= 13:
-           if edadINT <= 17:          
-              alert (title="Ej04",message="adolecente")
-        pass
+        if edad_int >= 13:
+           if edad_int <= 17:          
+              
+            alert(title = "EJ04", message = "Adolecente")
+            
+        
 
 
 if __name__ == "__main__":

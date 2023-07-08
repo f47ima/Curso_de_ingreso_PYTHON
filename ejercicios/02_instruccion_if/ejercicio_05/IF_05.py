@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: fatima
+apellido: gonzalez
 ---
 Ejercicio: instrucion_if_05
 ---
@@ -36,10 +36,22 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        #obtuve cont caja edad
+        edad = self.txt_edad.get()
+        #tranforme a int 
+        edad_int = int(edad)
 
-        
-        
+        if edad_int < 13 or edad_int > 17:
+            alert(title= "EJ05" , message = "No es adolecente")   
+
+
+            #TRate asi, no me salio. No entiendo porque.
+            # Las sangrias estaban bien puestas. 
+            # No se como ejercutarlo anidando el if
+      # if edad_int < 13:
+         # if edad_int > 17:        
+              
+           #alert(title = "EJ05", message = "No es adolecente")    
     
 if __name__ == "__main__":
     app = App()
