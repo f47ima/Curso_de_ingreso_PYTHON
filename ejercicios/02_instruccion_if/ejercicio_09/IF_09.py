@@ -7,8 +7,8 @@ import random
 
 
 '''
-nombre:
-apellido:
+nombre: fatima
+apellido: gonzalez
 ---
 Ejercicio: instrucion_if_09
 ---
@@ -29,6 +29,11 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
+        #numero_random = random_randrage (0,11) si quiero que vaya hasta el 10. 
+        numero_random = random.randint(1,11)
+        alert(title= "Toca,toca", message = numero_random)
+
+
         pass
         
 

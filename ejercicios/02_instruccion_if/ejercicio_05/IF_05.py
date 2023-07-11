@@ -41,17 +41,17 @@ class App(customtkinter.CTk):
         #tranforme a int 
         edad_int = int(edad)
 
-        if edad_int < 13 or edad_int > 17:
-            alert(title= "EJ05" , message = "No es adolecente")   
+        #if edad_int < 13 or edad_int > 17:
+         #   alert(title= "EJ05" , message = "No es adolecente")   
 
 
             #TRate asi, no me salio. No entiendo porque.
             # Las sangrias estaban bien puestas. 
             # No se como ejercutarlo anidando el if
-      # if edad_int < 13:
-         # if edad_int > 17:        
+        if edad_int < 13:
+            if edad_int > 17:        
               
-           #alert(title = "EJ05", message = "No es adolecente")    
+                alert(title = "EJ05", message = "No es adolecente")    
     
 if __name__ == "__main__":
     app = App()
