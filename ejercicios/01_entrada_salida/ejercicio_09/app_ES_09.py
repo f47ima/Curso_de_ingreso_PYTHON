@@ -61,12 +61,12 @@ class App(customtkinter.CTk):
     # es necesario el .0 para no perder informacion 
     
     # recorda que 10/100= 0.10 
-    # para hacer un aumento en vez de hacer (x*incremento/100)+x
+    # para hacer un AUMENTOS en vez de hacer (x*incremento/100)+x
     # puedo hacer x*1.incremento para tener el total
     # es decir el total x+ el incremento
     # ej incremento=10 entonces x*1.10
     
-    # para hacer un descuento en vez de hacer x-(x*dto/100)
+    # para hacer un DESCUENTOS en vez de hacer x-(x*dto/100)
     # puedo hacer 100-dto= que me da el porcentaje de descuento
     #ej 100-10=90, necesito saber el 90% del precio,
     # para que ya se reste directamente el dto del precio total

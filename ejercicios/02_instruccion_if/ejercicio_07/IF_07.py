@@ -59,15 +59,7 @@ class App(customtkinter.CTk):
             
         
         alert ("Mensaje", message= mensaje)
-
-
-
-
-
-
-
-
-        
+       
         
         pass
         
