@@ -12,7 +12,7 @@ Todas las lámparas están  al mismo precio de $800 pesos final.
 		C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y 
         si es de otra marca el descuento es del 20%.
 		D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas”
-          se hace un descuento del 10 % y si es de otra marca un 5%.
+        se hace un descuento del 10 % y si es de otra marca un 5%.
 		E.	Si el importe final con descuento suma más de $4000  se obtien un descuento adicional de 5%.
 '''
 
@@ -35,68 +35,81 @@ class App(customtkinter.CTk):
 
         self.combobox_cantidad = customtkinter.CTkComboBox(master=self, values= ["1", "2","3","4","5","6","7","8","9","10","11","12"])
         self.combobox_cantidad.grid(row=1, column=1, padx=10, pady=10)
-                
+        
         self.btn_calcular = customtkinter.CTkButton(master=self, text="Calcular", command=self.btn_calcular_on_click)
         self.btn_calcular.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
 
     def btn_calcular_on_click(self):
-        #Esta es la base del programa sin dtos. 
-        #LA necesitamos para todos los numeros por debajo de 3 que no aplican a las consignas.
-        #De otra forma nuestro programa estaria incompleto.
-        #Para las consignas vamos a necesitar la marca 
-        marca = self.combobox_marca.get()
-        cantidad = self.combobox_cantidad.get()
-        cantidad = int(cantidad)
-        precio_unitario = 800
-        descuento = 0
 
-        resultado_sin_dto = precio_unitario * cantidad   
+        #CUANDO TERMINES ACORDATE DE PONERLE BIEN EL MENSAJE A LOS MENSAJES
+        
+        marca = self.combobox_marca.get()
+        cantidad = int(self.combobox_cantidad.get())
+        precio_lamp= 800
 
         #A) Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
         if cantidad >= 6:
-            descuento = 50    
+            precio_a = precio_lamp * 0.5 * cantidad
+            mensaje = "El precio total de su compra es de precio_a "
             
+            precio_final = precio_a
+
         #B) Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % 
         # y si es de otra marca el descuento es del 30%.
         elif cantidad == 5:
-            descuento = 30             
-            
+            precio_b = precio_lamp * 0.7 * cantidad
+            mensaje = "El precio total de su compra es de precio_b"
+            precio_final = precio_b
+        
             if marca == "ArgentinaLuz":
-                descuento = 40
-            
+                precio_b_argentina = precio_lamp * 0.6 * cantidad
+                mensaje = "El precio total de su compra es de precio_b_argentina"
+                
+                precio_final =precio_b_argentina
+                
+                
         #C) Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y 
         #si es de otra marca el descuento es del 20%.
-
+	
         elif cantidad == 4:
-            descuento = 20
+            precio_c = precio_lamp * 0.80 * cantidad
+            mensaje = "El precio total de su compra es de precio_c "
+            precio_final= precio_c
             
-            if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
-                descuento = 25
-            
+            if  marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+                precio_c_arg_feli = precio_lamp * 0.75 * cantidad
+                mensaje = "El precio total de su compra es de precio_c_arg_feli"
+
+                precio_final = precio_c_arg_feli            
+
         #D) Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, 
         # si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
         elif cantidad == 3:
-            descuento = 5
+            precio_d = precio_lamp * 0.95 * cantidad
+            mensaje = "El precio total de su compra es de " + str(precio_d)
+
+            precio_final = precio_d
             
             if marca == "ArgentinaLuz":
-                descuento = 15
-            elif marca == "FelipeLamparas": #es else? 
-                descuento = 10
+                precio_d_arg = precio_lamp * 0.85 * cantidad
+                mensaje = "El precio total de su compra es de " + str(precio_d_arg)
+                precio_final= precio_d_arg
+            
+            elif marca == "FelipeLamparas":
+                precio_d_feli = precio_lamp * 0.90 * cantidad
+                mensaje = "El precio total de su compra es de "+ str(precio_d_feli)
+                precio_final = precio_d_feli
 
-        resultado = resultado_sin_dto - (resultado_sin_dto * descuento / 100)
+
 
         #E) Si el importe final con descuento suma más de $4000  se obtiene un descuento adicional de 5%
-        if resultado >= 4000 :
-            descuento = 5
-            resultado = resultado - resultado * descuento /100
+        if precio_final >= 4000:
+            extra = precio_final * 0.95
+            mensaje= "El precio total de su compra es " + extra
 
-        mensaje= "El precio de su compra es de $" + str(resultado)
-
-        alert("Lamparitas", mensaje)
-        
+        alert("Probando", mensaje)
         pass
-        
     
 if __name__ == "__main__":
     app = App()

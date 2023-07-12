@@ -12,7 +12,7 @@ Todas las lámparas están  al mismo precio de $800 pesos final.
 		C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y 
         si es de otra marca el descuento es del 20%.
 		D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas”
-          se hace un descuento del 10 % y si es de otra marca un 5%.
+        se hace un descuento del 10 % y si es de otra marca un 5%.
 		E.	Si el importe final con descuento suma más de $4000  se obtien un descuento adicional de 5%.
 '''
 
@@ -35,12 +35,12 @@ class App(customtkinter.CTk):
 
         self.combobox_cantidad = customtkinter.CTkComboBox(master=self, values= ["1", "2","3","4","5","6","7","8","9","10","11","12"])
         self.combobox_cantidad.grid(row=1, column=1, padx=10, pady=10)
-                
+        
         self.btn_calcular = customtkinter.CTkButton(master=self, text="Calcular", command=self.btn_calcular_on_click)
         self.btn_calcular.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
 
-    def btn_calcular_on_click(self):
+    def btn_calcular_on_click(self):       
         #Esta es la base del programa sin dtos. 
         #LA necesitamos para todos los numeros por debajo de 3 que no aplican a las consignas.
         #De otra forma nuestro programa estaria incompleto.
@@ -94,9 +94,7 @@ class App(customtkinter.CTk):
         mensaje= "El precio de su compra es de $" + str(resultado)
 
         alert("Lamparitas", mensaje)
-        
         pass
-        
     
 if __name__ == "__main__":
     app = App()

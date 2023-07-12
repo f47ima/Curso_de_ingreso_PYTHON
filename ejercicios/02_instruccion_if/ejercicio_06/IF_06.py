@@ -41,10 +41,10 @@ class App(customtkinter.CTk):
         if edad_int <= 10 :
             mensaje = "Usted es menor"
 
-        elif edad_int > 10 and edad_int < 13 :
+        elif edad_int <= 13 :
             mensaje="Usted es preadolecente"
 
-        elif edad_int >= 13 and edad_int <=17 :
+        elif edad_int <=17 :
             mensaje = "Usted es adolecente"
 
         else :
@@ -53,7 +53,13 @@ class App(customtkinter.CTk):
                 
         alert ("EJ06" , mensaje)
         
-        
+        #No se debe ser redundante, 
+        #si una condicion se precede, no se debe volver a poner en la proxima
+        #ej: edad int <= 10 :
+        #mensaje= menor
+        #edad int >10 and <= 13:
+        #mensaje = preadolecente.
+        #se puede escribir directamente como esta en el codigo 
         
     
 if __name__ == "__main__":
