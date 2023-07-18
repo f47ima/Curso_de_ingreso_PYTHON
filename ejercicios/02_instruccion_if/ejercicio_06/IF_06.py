@@ -38,29 +38,27 @@ class App(customtkinter.CTk):
     def btn_mostrar_on_click(self):
         edad = self.txt_edad.get()
         edad_int = int(edad)
+        
         if edad_int <= 10 :
             mensaje = "Usted es menor"
-
-        elif edad_int <= 13 :
-            mensaje="Usted es preadolecente"
-
-        elif edad_int <=17 :
-            mensaje = "Usted es adolecente"
-
-        else :
-            mensaje= "Usted es mayor"
-
-                
+        else:
+            if edad_int <= 13 :
+                mensaje="Usted es preadolecente"
+            else:
+                if edad_int <=17 :
+                    mensaje = "Usted es adolecente"
+                else:
+                    mensaje= "Usted es mayor"                
         alert ("EJ06" , mensaje)
         
         #No se debe ser redundante, 
         #si una condicion se precede, no se debe volver a poner en la proxima
+        #ES LO QUE DIFERENCIA UN CODIGO EFICIENTE DE UNO QUE ES UN ZAPALLO
         #ej: edad int <= 10 :
         #mensaje= menor
         #edad int >10 and <= 13:
         #mensaje = preadolecente.
-        #se puede escribir directamente como esta en el codigo 
-        
+        #se puede escribir directamente como esta en el codigo        
     
 if __name__ == "__main__":
     app = App()

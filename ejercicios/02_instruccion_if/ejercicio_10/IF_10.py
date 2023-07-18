@@ -37,14 +37,13 @@ class App(customtkinter.CTk):
 
         if numero_random >=6 :
             mensaje = "Promocion directa, la nota es " + str(numero_random)
-        elif numero_random >=4 :
-            mensaje = "Aprobado, la nota es " + str(numero_random)
         else:
-            mensaje = "Desaprobado, la nota es " + str(numero_random)
+            if numero_random >=4 :
+                mensaje = "Aprobado, la nota es " + str(numero_random)
+            else:
+                mensaje = "Desaprobado, la nota es " + str(numero_random)
         
         alert("Notas", mensaje)
-
-
         pass  
             
 

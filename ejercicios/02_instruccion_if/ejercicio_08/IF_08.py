@@ -44,11 +44,13 @@ class App(customtkinter.CTk):
         edad = self.txt_edad.get()
         edad = int(edad)
         estado = self.combobox_estado_civil.get()
+        mensaje = None
 
-        if edad >= 18 and estado == "Soltero":
-            mensaje = "Es soltero y no es menor."
-
-            alert("Puerca", mensaje)
+        if edad >= 18:
+            if estado == "Soltero":
+                mensaje = "Es soltero y no es menor."            
+                if mensaje != None:
+                    alert("Puerca", mensaje)
 
         pass
 

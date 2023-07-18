@@ -38,14 +38,14 @@ class App(customtkinter.CTk):
         edad_int = int(edad)
 
         if edad_int == 18:
-           alert (title = "EJ01", message = "Usted tiene 18 años")
+            alert (title = "EJ01", message = "Usted tiene 18 años")
 
         pass
 
         
         #if tiene dos valores posibles
         #true o false 
-             
+
 
     
 if __name__ == "__main__":

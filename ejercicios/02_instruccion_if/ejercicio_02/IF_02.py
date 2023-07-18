@@ -38,7 +38,7 @@ class App(customtkinter.CTk):
         edad_int = int(edad)
 
         if edad_int >= 18:
-           alert (title = "EJ02", message = "MAYOR")
+            alert (title = "EJ02", message = "MAYOR")
         
     
 if __name__ == "__main__":

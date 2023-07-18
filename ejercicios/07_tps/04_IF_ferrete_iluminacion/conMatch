@@ -57,43 +57,47 @@ class App(customtkinter.CTk):
 
         resultado_sin_dto = precio_unitario * cantidad   
 
-        #A) Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
-        if cantidad >= 6:
-            descuento = 50    
-            
+        #A) Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%.
         #B) Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % 
         # y si es de otra marca el descuento es del 30%.
-        elif cantidad == 5:
-            descuento = 30             
-            
-            if marca == "ArgentinaLuz":
-                descuento = 40
-            
         #C) Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y 
         #si es de otra marca el descuento es del 20%.
-
-        elif cantidad == 4:
-            descuento = 20
-            
-            if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
-                descuento = 25
-            
         #D) Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, 
         # si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
-        elif cantidad == 3:
-            descuento = 5
-            
-            if marca == "ArgentinaLuz":
-                descuento = 15
-            elif marca == "FelipeLamparas": 
-                descuento = 10
-
-        resultado = resultado_sin_dto - (resultado_sin_dto * descuento / 100)
-
         #E) Si el importe final con descuento suma más de $4000  se obtiene un descuento adicional de 5%
+
+        match cantidad :
+            case 1 | 2 :
+                descuento = 0
+            case 3 :
+                match marca:
+                    case "ArgentinaLuz":
+                        descuento = 15
+                    case "FelipeLamparas":
+                        descuento = 10
+                    case _:
+                        descuento = 5
+            case 4 :
+                match marca :
+                    case "ArgentinaLuz" | "FelipeLamparas" :
+                        descuento = 25
+                    case _:
+                        descuento = 20
+            case 5:
+                match marca:
+                    case "ArgentinaLuz":
+                        descuento = 40
+                    case _:
+                        descuento = 30
+            case _:
+                descuento = 50
+        
+        resultado = resultado_sin_dto - (resultado_sin_dto * descuento / 100)
+        
         if resultado >= 4000 :
             descuento = 5
-            resultado = resultado - resultado * descuento /100
+            resultado = resultado - resultado * descuento /100      
+        
 
         mensaje= "El precio de su compra es de $" + str(resultado)
 

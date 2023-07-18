@@ -39,20 +39,14 @@ class App(customtkinter.CTk):
         edad_int = int(edad)
 
         if edad_int >= 18:
-           mensaje = "MAYOR"
-
+            mensaje = "MAYOR"
         else:
-           mensaje = "menor"
+            mensaje = "menor"
 
         alert (title = "EJ03", message = mensaje)
 
         #CUIDADO DONDE PONES EL ALERT. MAMERTA.
-        
-        
 
-        
-        
-    
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

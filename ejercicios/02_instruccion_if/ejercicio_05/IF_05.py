@@ -40,19 +40,17 @@ class App(customtkinter.CTk):
         edad = self.txt_edad.get()
         #tranforme a int 
         edad_int = int(edad)
-
-        #if edad_int < 13 or edad_int > 17:
-         #   alert(title= "EJ05" , message = "No es adolecente")   
-
-
-            #TRate asi, no me salio. No entiendo porque.
-            # Las sangrias estaban bien puestas. 
-            # No se como ejercutarlo anidando el if
+        mensaje = None
+        '''if edad_int < 13 or edad_int > 17:
+            alert(title= "EJ05" , message = "No es adolecente")'''
         if edad_int < 13:
-            if edad_int > 17:        
-              
-                alert(title = "EJ05", message = "No es adolecente")    
-    
+            mensaje= "No es adolecente"
+        else:
+            if edad_int > 17:
+                mensaje= "No es adolecente"
+
+        if mensaje != None:
+            alert("TITULO", mensaje) 
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

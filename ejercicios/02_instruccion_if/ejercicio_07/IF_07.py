@@ -48,17 +48,28 @@ class App(customtkinter.CTk):
         edad = self.txt_edad.get()
         edad = int (edad)
         nacionalidad = self.combobox_tipo.get()
+        
+        if nacionalidad == "NATIVO":
+            if edad >= 16:
+                mensaje = "Esta habilitado para votar" 
+            else:
+                mensaje = "No esta habilitado para votar"
+        else:
+            if nacionalidad == "NATURALIZADO":
+                if edad >= 18:                    
+                    mensaje = "Esta habilitado para votar"
+                else:
+                    mensaje = "No esta habilitado para votar"
 
+        '''Lo habia hecho asi pero quise probar distinto
         if nacionalidad == "NATIVO" and edad >= 16 :
             mensaje = "Esta habilitado para votar" 
         else:
             mensaje = "No esta habilitado para votar"
-
             if nacionalidad == "NATURALIZADO" and edad >= 18 :
-                mensaje = "Esta habilitado para votar"
+                mensaje = "Esta habilitado para votar"'''
             
-        
-        alert ("Mensaje", message= mensaje)
+        alert ("Mensaje", mensaje)
        
         
         pass
