@@ -36,7 +36,7 @@ class App(customtkinter.CTk):
         contador = 0
         numero_ingresado = "si"   #siendo neesario esto para que entre al bucle la primera vez 
         while numero_ingresado != None: #de esta forma no te putea cuando cancelas 
-            numero_ingresado = prompt(title="EJ06", prompt= "Ingrese un numero ")
+            numero_ingresado = prompt(title="EJ06", prompt= "Ingrese un numero... ")
             if numero_ingresado != None: # and numero_ingresado != "": #tambien necesrio para que no te putee al cancelar 
                 numero_int= int(numero_ingresado)
                 contador = contador + 1
