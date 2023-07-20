@@ -32,6 +32,24 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
+        acumulador = 0
+        contador = 0
+        numero_ingresado = "si"   #siendo neesario esto para que entre al bucle la primera vez 
+        while numero_ingresado != None: #de esta forma no te putea cuando cancelas 
+            numero_ingresado = prompt(title="EJ06", prompt= "Ingrese un numero ")
+            if numero_ingresado != None: # and numero_ingresado != "": #tambien necesrio para que no te putee al cancelar 
+                numero_int= int(numero_ingresado)
+                contador = contador + 1
+                acumulador = acumulador + numero_int
+        #el promedio va fuera del while porque mecesita 
+        #contar todos los nuemeros antes de sacar la cuenta
+        promedio= acumulador / contador 
+        #esto lo tengo que hacer una sola vez o lo tengo qeu repetir?
+        #como va una sola vez, se escribe para CERRAR el bucle
+        self.txt_suma_acumulada.delete(0,"end")
+        self.txt_suma_acumulada.insert(0,acumulador)
+        self.txt_promedio.delete(0,"end")
+        self.txt_promedio.insert(0,promedio)
         pass
 
     

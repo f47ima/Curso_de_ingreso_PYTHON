@@ -84,7 +84,7 @@ class App(customtkinter.CTk):
 
         tarifa= tarifa_base * porcentaje
 
-        mensaje= "La tarifa de su viaje es de $" + str(tarifa)
+        mensaje= "La tarifa de su viaje a " + destino + " durante la temporada de " + estacion +" es de $" + str(tarifa) 
         alert("Tarifa" , mensaje)
 
         pass

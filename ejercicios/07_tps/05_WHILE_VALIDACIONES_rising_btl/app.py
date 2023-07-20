@@ -7,10 +7,13 @@ import customtkinter
 '''
 Rising BTL. Empresa dedicada a la toma de datos para realizar estadísticas y censos nos pide realizar una carga de datos validada e ingresada 
 por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos. 
+hay que meter los datos pro prompt 
+aca si vale que salgan varios prompt en el codigo porque tiene que ir apareciendo de a uno 
 
+Validar significa que no se puede avanzar ahsta que entre un dato valido 
 Los datos requeridos son los siguientes:
-    Apellido
-    Edad, entre 18 y 90 años inclusive.
+    Apellido un prompt para apellido
+    Edad, entre 18 y 90 años inclusive. otrao para esta edad 
     Estado civil, ["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]
     Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
 '''

@@ -31,8 +31,29 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
+        
+        acumulador = 0
+        contador = 0 #inicializar variable de control
+        numero = "" #esta variable se modificara en la linea 39 
+        while(contador < 5) :#condicion que se evalua 
+            numero = prompt(title="EJ06", prompt= "Ingrese un numero ")
+            if numero != None and numero != "":
+                numero = int(numero)
+                contador = contador + 1 #cambiar la condicion de la variable de control
+                acumulador = acumulador + numero
+            else: 
+                numero = 0
+                break
+        if contador != 0:
+            promedio= acumulador / contador
+        else:
+            promedio = "No se ingresaron datos"
+            
+        self.txt_suma_acumulada.delete(0,1000000000)
+        self.txt_suma_acumulada.insert(0,acumulador)
+        self.txt_promedio.delete(0,100000000)
+        self.txt_promedio.insert(0,promedio)
         pass
-
     
 if __name__ == "__main__":
     app = App()

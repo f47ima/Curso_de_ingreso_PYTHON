@@ -34,12 +34,12 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-         #tome el nombre por promt y lo guarde en la variable nombre
-         nombre = prompt (title = "EJ04", prompt = "Ingrese su nombre")
-         #aca puse el nombre en la caja de texto
-         self.txt_nombre.delete(0,1000000)
-         self.txt_nombre.insert(0,nombre)
-         pass
+        #tome el nombre por promt y lo guarde en la variable nombre
+        nombre = prompt (title = "EJ04", prompt = "Ingrese su nombre")
+        #aca puse el nombre en la caja de texto
+        self.txt_nombre.delete(0,1000000)
+        self.txt_nombre.insert(0,nombre)
+        pass
         
     
 if __name__ == "__main__":
